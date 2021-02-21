@@ -8,7 +8,9 @@ switch oGame.state
 		{
 			if(point_distance(x, y, target.xx, target.yy) <= weapon.details.range * CELLSIZE)
 			{
-				target._health -= weapon.details.damage
+				var dmg = weapon.details.damage(primStats)
+				show_debug_message(name + " hits for " + string(dmg) + " points of damage")
+				target._health -= dmg
 				oGame.flip_turn = true
 				break;
 			}

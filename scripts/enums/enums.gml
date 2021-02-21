@@ -1,8 +1,25 @@
-function weaponDetails(_name, _range, _damage) constructor
+function primaryStats(_str, _dex, _int, _end) constructor
 {
-	name = _name
-	range = _range
-	damage = _damage
+	strength = _str
+	dexterity = _dex
+	intelligence = _int
+	endurance = _end
+	
+	function get(str)
+	{
+		switch string_lower(str)
+		{
+			case "strength":     return strength
+			case "dexterity":    return dexterity
+			case "intelligence": return intelligence
+			case "endurance":    return endurance
+			default:
+			{
+				show_debug_message("No such stat")
+				return -1000
+			}
+		}
+	}
 }
 
 enum PC_STATE
