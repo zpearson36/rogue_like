@@ -69,7 +69,9 @@ switch(oGame.state)
 					{
 						show_debug_message("BITCH!")
 						state = PC_STATE.IDLE
-						targ._health -= weapon.details.damage
+						var dmg = weapon.details.damage(primStats)
+						show_debug_message(name + " hits for " + string(dmg) + " points of damage")
+						targ._health -= dmg
 						oGame.flip_turn = true
 						break;
 					}

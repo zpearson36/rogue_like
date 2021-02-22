@@ -1,0 +1,68 @@
+stats for game
+
+Primary stats:
+Strength
+Dexterity (Maybe higher Dex allows multiple attacks before turn ends?)
+Intelligence
+Endurance
+Perception
+Speed? (Maybe to determine how many times PC can move before turn ends?)
+Charisma (later addition, when dialogue is introduced. Right now, focused on combat/exploration)
+
+
+Skill Stats:
+Blades{
+    Long Blade
+    Short Blade
+}
+Blunt
+Axe
+Pole Arm
+Spear
+Marksman{
+    Short Bow
+    Long Bow
+    CrossBow
+}
+unarmed
+armor{
+    unarmored
+    light armor
+    medium armor
+    heavy armor
+}
+Block
+Dodge
+lockpick
+sneak
+dialogue based skills{
+deception
+barter
+speechcraft
+}
+magic{
+destruction
+conjuration
+illusion
+restoration
+mysticism
+}
+
+Each Skill stat will be associated with 1 or more primary stats. This will have various affects. For
+one, The associate primary stat will determine what the base value for the skills are  - the higher
+the primary stat, the higher the base skill stat. Additionally, as one increases proficiency in a
+skill, the associate primary skills will gain experience allowing them to increase over time.
+
+The skill stats will provide modifiers to action rolls that will help determine the outcome. The
+higher the stat, the higher the modifier, the better chances of success. The primary stats will also
+provide a benefit once an action has been determined to be successful (I.E. A high skill in long
+blade makes it more likely that you'll strike your opponent, but the damage amount is modified by
+your strength stat - High strength means more damage)
+
+Health is determined directly by endurance. Each level, health is increased in proportion to the
+characters endurance.
+
+Max equip load is determined by Strength. Each level, Max equip load is increased in proportion to
+the characters strength
+
+Equip load affects movement speed (maybe) and ability to dodge attacks. 

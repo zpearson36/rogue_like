@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"sNpc","path":"sprites/sNpc/sNpc.yy",},"order":2,},
     {"id":{"name":"sPc","path":"sprites/sPc/sPc.yy",},"order":1,},
+    {"id":{"name":"weaponsList","path":"scripts/weaponsList/weaponsList.yy",},"order":3,},
     {"id":{"name":"oGame","path":"objects/oGame/oGame.yy",},"order":2,},
     {"id":{"name":"sCheckered","path":"sprites/sCheckered/sCheckered.yy",},"order":0,},
     {"id":{"name":"macros","path":"scripts/macros/macros.yy",},"order":0,},
