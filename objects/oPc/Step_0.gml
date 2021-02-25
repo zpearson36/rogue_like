@@ -67,11 +67,17 @@ switch(oGame.state)
 					if((mouse_x div CELLSIZE) == (xx div CELLSIZE) and (mouse_y div CELLSIZE) == (yy div CELLSIZE)) break
 					if(targ != noone and mouse_x > _x1 and mouse_x < _x2 and mouse_y > _y1 and mouse_y < _y2)
 					{
-						show_debug_message("BITCH!")
+						if(hit(self, targ))
+						{
+							var dmg = weapon.details.damage(primStats)
+							show_debug_message(name + " hits for " + string(dmg) + " points of damage")
+							targ._health -= dmg
+						}
+						else
+						{
+							show_debug_message(name + " misses " + targ.name)
+						}
 						state = PC_STATE.IDLE
-						var dmg = weapon.details.damage(primStats)
-						show_debug_message(name + " hits for " + string(dmg) + " points of damage")
-						targ._health -= dmg
 						oGame.flip_turn = true
 						break;
 					}

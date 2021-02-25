@@ -22,6 +22,39 @@ function primaryStats(_str, _dex, _int, _end) constructor
 	}
 }
 
+function skillStats() constructor
+{
+	skillVal = ds_map_create()
+	skillVal[? "short_blade"] = 5
+	skillVal[? "long_blade"] = 5
+	skillVal[? "blunt"] = 5
+	skillVal[? "axe"] = 5
+	skillVal[? "pole_arm"] = 5
+	skillVal[? "spear"] = 5
+	skillVal[? "short_bow"] = 5
+	skillVal[? "long_bow"] = 5
+	skillVal[? "cross_bow"] = 5
+	skillVal[? "unarmed"] = 5
+	skillVal[? "unarmored"] = 5
+	skillVal[? "light_armor"] = 5
+	skillVal[? "medium_armor"] = 5
+	skillVal[? "heavy_armor"] = 5
+	skillVal[? "block"] = 5
+	skillVal[? "dodge"] = 5
+	skillVal[? "sneak"] = 5
+	skillVal[? "lockpick"] = 5
+	skillVal[? "destruction_magic"] = 5
+	skillVal[? "conjuration_magic"] = 5
+	skillVal[? "illusion_magic"] = 5
+	skillVal[? "restoration_magic"] = 5
+	skillVal[? "mysticism_magic"] = 5
+	
+	function modifier(str)
+	{
+		return (skillVal[? str] - 50) * .2
+	}
+}
+
 enum PC_STATE
 {
 	IDLE = 0,

@@ -77,3 +77,16 @@ function get_path(start, target, map)
 	else dest = undefined
 	return [prev_x, prev_y]
 }
+
+function hit(atk, def)
+{
+	def_roll = roll() + def.skills.modifier("dodge")
+	atk_roll = roll() + atk.skills.modifier(atk.weapon.details.wType)
+	return atk_roll > def_roll
+}
+
+function roll()
+{
+	// Rolling will be based on 1d10 scale, with modifiers in +/- .2 increments based on skill level
+	return irandom_range(1, 10)
+}
