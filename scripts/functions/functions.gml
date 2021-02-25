@@ -87,5 +87,6 @@ function hit(atk, def)
 
 function roll()
 {
+	// Rolling will be based on 1d10 scale, with modifiers in +/- .2 increments based on skill level
 	return irandom_range(1, 10)
 }

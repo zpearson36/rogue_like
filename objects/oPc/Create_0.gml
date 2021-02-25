@@ -8,7 +8,7 @@ state = PC_STATE.IDLE
 xx = (x div CELLSIZE) * CELLSIZE
 yy = (y div CELLSIZE) * CELLSIZE
 weapon_states = []
-array_push(weapon_states, oGame.weaponsMap[? "Spear"])
+array_push(weapon_states, oGame.weaponsMap[? "Long Sword"])
 weapon = instance_create_layer(x, y, layer, oWeapon)
 current_weapon_state = 0
 weapon.details = weapon_states[current_weapon_state]

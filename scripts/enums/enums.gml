@@ -25,8 +25,8 @@ function primaryStats(_str, _dex, _int, _end) constructor
 function skillStats() constructor
 {
 	skillVal = ds_map_create()
-	skillVal[? "short_blades"] = 5
-	skillVal[? "long_blades"] = 5
+	skillVal[? "short_blade"] = 5
+	skillVal[? "long_blade"] = 5
 	skillVal[? "blunt"] = 5
 	skillVal[? "axe"] = 5
 	skillVal[? "pole_arm"] = 5
