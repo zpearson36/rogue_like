@@ -51,7 +51,7 @@ function skillStats() constructor
 	
 	function modifier(str)
 	{
-		return (skillVal[? str] - 50) div 5
+		return (skillVal[? str] - 50) * .2
 	}
 }
 
