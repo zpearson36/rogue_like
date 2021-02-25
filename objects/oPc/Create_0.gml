@@ -3,6 +3,9 @@
 name = "PC character"
 _health = 10
 primStats = new primaryStats(10, 10, 10, 10)
+skills = new skillStats()
+skills.skillVal[? "dodge"] = 15
+skills.skillVal[? "spear"] = 25
 state = PC_STATE.IDLE
 xx = (x div CELLSIZE) * CELLSIZE
 yy = (y div CELLSIZE) * CELLSIZE

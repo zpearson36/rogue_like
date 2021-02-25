@@ -3,6 +3,7 @@
 name = "NPC Character"
 _health = 10
 primStats = new primaryStats(10, 10, 10, 10)
+skills = new skillStats()
 x = (x div CELLSIZE) * CELLSIZE
 y = (y div CELLSIZE) * CELLSIZE
 //xx = ((200) div CELLSIZE) * CELLSIZE

@@ -12,11 +12,11 @@ for(var i = 0; i < MAPWIDTH; i++)
 }
 
 weaponsMap = ds_map_create()
-weaponsMap[? "Dagger"] = new weaponDetails("Dagger", 1, 1, [0, .02, 0, 0])
-weaponsMap[? "Short Sword"] = new weaponDetails("Short Sword", 1, 2, [.01, .025, 0, 0])
-weaponsMap[? "Long Sword"] = new weaponDetails("Long Sword", 1, 3, [.05, .05, 0, 0])
-weaponsMap[? "Axe"] = new weaponDetails("Axe", 1, 5, [.15, .0, 0, 0])
-weaponsMap[? "Spear"] = new weaponDetails("Spear", 2, 2, [.02, .02, 0, 0])
+weaponsMap[? "Dagger"]      = new weaponDetails("Dagger",      1, 1, [  0,  .02, 0, 0], "short_blade")
+weaponsMap[? "Short Sword"] = new weaponDetails("Short Sword", 1, 2, [.01, .025, 0, 0], "short_blade")
+weaponsMap[? "Long Sword"]  = new weaponDetails("Long Sword",  1, 3, [.05,  .05, 0, 0], "long_blade")
+weaponsMap[? "Axe"]         = new weaponDetails("Axe",         1, 5, [.15,   .0, 0, 0], "axe")
+weaponsMap[? "Spear"]       = new weaponDetails("Spear",       2, 2, [.02,  .02, 0, 0], "spear")
 
 
 char = instance_create_layer(x, y, layer, oPc)

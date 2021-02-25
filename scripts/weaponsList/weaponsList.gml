@@ -1,4 +1,4 @@
-function weaponDetails(_name, _range, _damage, _dmgScl) constructor
+function weaponDetails(_name, _range, _damage, _dmgScl, _type) constructor
 {
 	//@func weaponDetails
 	//@param _name            Name to give to weapon
@@ -7,6 +7,7 @@ function weaponDetails(_name, _range, _damage, _dmgScl) constructor
 	//@oaram _dmgScl          How damage is scaled based on stats (must be an array of form [<str>, <dex>, <end>, <int>]
 	show_debug_message(_name)
 	name = _name
+	wType = _type
 	range = _range
 	baseDamage = _damage
 	damageScale = ds_map_create()
