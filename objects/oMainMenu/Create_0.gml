@@ -14,8 +14,8 @@ menu_x = gui_width - gui_margin
 menu_y = gui_height - gui_margin;
 menu_x_target = gui_width - gui_margin;
 menu_speed = 25;
-menu_font = fFont;
-menu_itemheight = font_get_size(fFont);
+menu_font = fMainMenu;
+menu_itemheight = font_get_size(fMainMenu);
 menu_committed = -1;
 menu_control = true;
 
