@@ -45,3 +45,20 @@ for(var i = 0; i < array_length(stat_names); i++)
 }
 
 
+// Skill Statas
+skill_header = 315
+skills = new skillStats()
+skillsVal = skills.skillVal
+skillNames = []
+skill_offset = 0
+ds_map_keys_to_array(skillsVal, skillNames)
+skillLevels = ds_map_create()
+for(var i = 0; i < array_length(skillNames); i++)
+{
+	skillLevels[? skillNames[i]] = MAJOR_SKILL.NO
+	skill = instance_create_layer(skill_header + 20 + 205 * (i div 12), stat_points_y + 34 * (i % 12), layer, oSkill)
+	skill.txt = skillNames[i]
+	skill.menu = self
+}
+major_skills_available = 3
+minor_skills_available = 5

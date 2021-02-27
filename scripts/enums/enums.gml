@@ -25,24 +25,27 @@ function primaryStats(_str, _dex, _int, _end) constructor
 function skillStats() constructor
 {
 	skillVal = ds_map_create()
+	//dex based
 	skillVal[? "short_blade"] = 5
-	skillVal[? "long_blade"] = 5
-	skillVal[? "blunt"] = 5
-	skillVal[? "axe"] = 5
 	skillVal[? "pole_arm"] = 5
 	skillVal[? "spear"] = 5
 	skillVal[? "short_bow"] = 5
-	skillVal[? "long_bow"] = 5
-	skillVal[? "cross_bow"] = 5
 	skillVal[? "unarmed"] = 5
 	skillVal[? "unarmored"] = 5
 	skillVal[? "light_armor"] = 5
-	skillVal[? "medium_armor"] = 5
-	skillVal[? "heavy_armor"] = 5
-	skillVal[? "block"] = 5
 	skillVal[? "dodge"] = 5
 	skillVal[? "sneak"] = 5
 	skillVal[? "lockpick"] = 5
+	//str based
+	skillVal[? "long_blade"] = 5
+	skillVal[? "blunt"] = 5
+	skillVal[? "axe"] = 5
+	skillVal[? "long_bow"] = 5
+	skillVal[? "cross_bow"] = 5
+	skillVal[? "medium_armor"] = 5
+	skillVal[? "heavy_armor"] = 5
+	skillVal[? "block"] = 5
+	//int based	
 	skillVal[? "destruction_magic"] = 5
 	skillVal[? "conjuration_magic"] = 5
 	skillVal[? "illusion_magic"] = 5
@@ -66,4 +69,11 @@ enum GAME_STATE
 {
 	PC_TURN = 0,
 	NPC_TURN = 1
+}
+
+enum MAJOR_SKILL
+{
+	NO,
+	MAJOR,
+	MINOR
 }
