@@ -58,3 +58,4 @@ for(var i = 0; i < array_length(skillNames); i++)
 	draw_set_color(c_ltgray)
 	draw_text(skill_header + 204 * (i div 12) + 4, stat_points_y + 34 * (i % 12) + 1, skillsVal[? skillNames[i]]  + skill_bonus)
 }
+

@@ -1,3 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-//show_debug_message(primStats)
+menu = undefined
+c_color = c_grey
+subimg = 0

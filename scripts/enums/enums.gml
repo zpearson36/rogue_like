@@ -54,6 +54,7 @@ function skillStats() constructor
 	
 	function modifier(str)
 	{
+		//show_debug_message(str)
 		return (skillVal[? str] - 50) * .2
 	}
 }

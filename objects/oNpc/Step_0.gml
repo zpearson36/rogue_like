@@ -1,5 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
+if(!instance_exists(oPc))
+{
+	target = undefined
+}
 switch oGame.state
 {
 	case GAME_STATE.NPC_TURN:
@@ -31,6 +35,11 @@ switch oGame.state
 				if start[1] - next[1] < 0 dir = DOWN
 			}
 			
+		}
+		else if(instance_exists(oPc))
+		{
+			target = instance_find(oPc, 0)
+			break;
 		}
 		else var dir = choose(UP, DOWN, LEFT, RIGHT)
 		switch dir

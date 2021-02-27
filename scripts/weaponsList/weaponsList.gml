@@ -5,7 +5,7 @@ function weaponDetails(_name, _range, _damage, _dmgScl, _type) constructor
 	//@param _range           Range at which weapon is effective
 	//@param _damage          Weapons base damage
 	//@oaram _dmgScl          How damage is scaled based on stats (must be an array of form [<str>, <dex>, <end>, <int>]
-	show_debug_message(_name)
+	if(_name == "none")	show_debug_message("Unintentional Weapon Creation. MUST DEBUG!!!!!!")
 	name = _name
 	wType = _type
 	range = _range

@@ -27,7 +27,7 @@ stats = ds_map_create()
 stats[? "strength"] = 1
 stats[? "dexterity"] = 1
 stats[? "intelligence"] = 1
-stats[? "vitality"] = 1
+stats[? "endurance"] = 1
 stat_names = ds_map_keys_to_array(stats)
 available_points = 15
 max_points = 15
@@ -62,3 +62,8 @@ for(var i = 0; i < array_length(skillNames); i++)
 }
 major_skills_available = 3
 minor_skills_available = 5
+
+
+// Create Char Button
+btn = instance_create_layer(50, 660, layer, oCreateCharButton)
+btn.menu = self

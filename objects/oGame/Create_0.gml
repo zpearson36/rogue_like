@@ -20,8 +20,8 @@ weaponsMap[? "Spear"]       = new weaponDetails("Spear",       2, 2, [.02,  .02,
 weaponsMap[? "Long Bow"]    = new weaponDetails("Long Bow",    7, 2, [.05,    0, 0, 0], "long_bow")
 
 
-char = instance_create_layer(x, y, layer, oPc)
+
 not_char = instance_create_layer(irandom(room_width), irandom(room_height), layer, oNpc)
-not_char.target = char
+not_char.persistent = true
 state = GAME_STATE.PC_TURN
 flip_turn = false
