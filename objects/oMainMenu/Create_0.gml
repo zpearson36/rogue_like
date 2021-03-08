@@ -28,8 +28,8 @@ menu[1].txt = "Load Game"
 menu[0].txt = "Quit"
 
 menu[0].action = function(){game_end()}
-menu[1].action = function(){load_game()}
-menu[2].action = function(){room_goto_next()}
+menu[1].action = function(){room_goto(rLoadScreen)}
+menu[2].action = function(){room_goto(rCreateCharacter)}
 
 menu_items = array_length_1d(menu)
 menu_cursor = 2

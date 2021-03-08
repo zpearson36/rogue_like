@@ -95,8 +95,10 @@ function save_game()
 {
 	var _saveData = []
 	
+	var _saveString = "No Char Name Found"	
 	with(oSavable)
 	{
+		if(object_get_name(object_index) == "oPc") _saveString = name
 		show_debug_message(string(object_get_name(object_index)) + ": " + string(object_index))
 		array_push(_saveData, save())
 	}
@@ -104,17 +106,18 @@ function save_game()
 	var _string = json_stringify(_saveData)
 	var _buffer = buffer_create(string_byte_length(_string) + 1, buffer_fixed, 1)
 	buffer_write(_buffer, buffer_string, _string)
-	buffer_save(_buffer, "savedgame1.save")
+	buffer_save(_buffer, _saveString + ".save")
+	//buffer_save(_buffer, working_directory + "savedgame1.save")
 	buffer_delete(_buffer)
 	//show_debug_message("Game Saved! " + _string)
 }
 
-function load_game()
+function load_game(fileName)
 {
 	with(oSavable){instance_destroy()}
-	if(file_exists("savedgame1.save"))
+	if(file_exists(fileName))
 	{
-		var _buffer = buffer_load("savedgame1.save")
+		var _buffer = buffer_load(working_directory + fileName)
 		var _string = buffer_read(_buffer, buffer_string)
 		buffer_delete(_buffer)
 		
