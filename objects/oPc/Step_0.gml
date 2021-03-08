@@ -71,7 +71,7 @@ switch(oGame.state)
 						if(hit(self, targ))
 						{
 							var dmg = weapon.details.damage(primStats)
-							show_debug_message(name + " hits for " + string(dmg) + " points of damage")
+							show_debug_message(name + " hits for " + string(dmg) + " points of damage with " + weapon.details.name)
 							targ._health -= dmg
 						}
 						else

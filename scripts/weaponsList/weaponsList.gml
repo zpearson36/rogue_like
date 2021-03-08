@@ -26,4 +26,5 @@ function weaponDetails(_name, _range, _damage, _dmgScl, _type) constructor
 		}
 		return baseDamage + dmgMod
 	}
+	
 }

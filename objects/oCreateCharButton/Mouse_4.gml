@@ -2,13 +2,19 @@
 // You can write your code in this editor
 if(menu.major_skills_available == 0 and menu.minor_skills_available == 0 and menu.available_points == 0 and menu.txt_field != "")
 {
+	var game = instance_create_layer(x, y, layer, oGame)
+	game.persistent = true
 	subimg = 1
 	with(menu)
 	{
-		char = instance_create_layer(irandom(room_width), irandom(room_height), layer, oPc)
+		var char = instance_create_layer(irandom(room_width), irandom(room_height), layer, oPc)
 		char.persistent = true
 		char.name = txt_field
-		char.primStats = new primaryStats( stats[? "strength"], stats[? "dexterity"], stats[? "intelligence"], stats[? "endurance"])
+		char.primStats = instance_create_layer(x, y, layer, oPrimaryStats)
+		char.primStats.set("strength",     stats[? "strength"])
+		char.primStats.set("dexterity",    stats[? "dexterity"])
+		char.primStats.set("intelligence", stats[? "intelligence"])
+		char.primStats.set("endurance",    stats[? "endurance"])
 		char.primStats.persistent = true
 		for(var i = 0; i < array_length(skillNames); i++)
 		{
@@ -20,6 +26,8 @@ if(menu.major_skills_available == 0 and menu.minor_skills_available == 0 and men
 		char.skills = skills
 		char.skills.persistent = true
 	}
+	instance_create_layer(irandom(room_width), irandom(room_height), layer, oNpc)
+	game.running = true
 	room_goto_next()
 }
 else

@@ -21,16 +21,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oWeapon","path":"objects/oWeapon/oWeapon.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oSkills","path":"objects/oSkills/oSkills.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "CharacterInfo",
+    "path": "folders/Objects/CharacterInfo.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oWeapon",
+  "name": "oSkills",
   "tags": [],
   "resourceType": "GMObject",
 }

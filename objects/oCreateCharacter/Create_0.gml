@@ -47,7 +47,7 @@ for(var i = 0; i < array_length(stat_names); i++)
 
 // Skill Statas
 skill_header = 315
-skills = new skillStats()
+skills = instance_create_layer(x, y, layer, oSkills)//new skillStats()
 skillsVal = skills.skillVal
 skillNames = []
 skill_offset = 0
