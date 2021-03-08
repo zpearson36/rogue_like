@@ -8,12 +8,12 @@ function save()
 	var _saveEntity =
 	{
 		obj: object_get_name(object_index),
-		_details: details
+		_details: details.save()
 	}
 	return _saveEntity
 }
 
 function load(obj)
 {
-	details = obj._details
+	details.load(obj._details)
 }

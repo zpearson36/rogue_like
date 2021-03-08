@@ -27,4 +27,37 @@ function weaponDetails(_name, _range, _damage, _dmgScl, _type) constructor
 		return baseDamage + dmgMod
 	}
 	
+	function save()
+	{
+		var keyArray = []
+		ds_map_keys_to_array(damageScale, keyArray)
+		var valArray = []
+		for(var i = 0; i < array_length(keyArray); i++)
+		{
+			array_push(valArray, damageScale[? keyArray[i]])
+		}
+		var _saveEntity = {
+			_name: name,
+			_wType: wType,
+			_range: range,
+			_baseDamage: baseDamage,
+			_keyArray: keyArray,
+			_valArray: valArray
+		}
+	
+		return _saveEntity
+	}
+
+	function load(obj)
+	{
+		for(var i = 0; i < array_length(obj._keyArray); i++)
+		{
+			damageScale[? obj._keyArray[i]] = obj._valArray[i]
+		}
+		name = obj._name
+		wType = obj._wType
+		range = obj._range
+		baseDamage = obj._baseDamage
+	}
+	
 }
