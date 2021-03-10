@@ -10,11 +10,7 @@ switch oGame.state
 	{
 		if(target != undefined)
 		{
-			var a = target
-			var b = weapon
-			var c = weapon.details
-			var d = weapon.details.range
-			if(point_distance(x, y, target.xx, target.yy) <= weapon.details.range * CELLSIZE)
+			if(point_distance(x, y, target.xx, target.yy) <= weapon.details.range * CELLSIZE * sqrt(2))
 			{
 				if(hit(self, target))
 				{
