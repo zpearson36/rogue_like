@@ -5,9 +5,9 @@ switch(state)
 {
 	case PC_STATE.ATTACKING:
 	{
-		for(var i = -weapon.details.range; i <= weapon.details.range; i++)
+		for(var i = -weapon.range; i <= weapon.range; i++)
 		{
-			for(var j = -weapon.details.range; j <= weapon.details.range; j++)
+			for(var j = -weapon.range; j <= weapon.range; j++)
 			{
 				if(i == 0 and j == 0) continue
 				draw_set_alpha(.4)

@@ -1,4 +1,4 @@
-function weaponDetails(_name, _range, _damage, _dmgScl, _type) constructor
+/*function weaponDetails(_name, _range, _damage, _dmgScl, _type) constructor
 {
 	//@func weaponDetails
 	//@param _name            Name to give to weapon
@@ -61,3 +61,4 @@ function weaponDetails(_name, _range, _damage, _dmgScl, _type) constructor
 	}
 	
 }
+*/

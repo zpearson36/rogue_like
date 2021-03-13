@@ -5,10 +5,7 @@ event_inherited()
 _health = 10
 primStats = instance_create_layer(x, y, layer, oPrimaryStats)
 skills = instance_create_layer(x, y, layer, oSkills)
-weapon_states = []
 weapon = instance_create_layer(x, y, layer, oWeapon)
-array_push(weapon_states, weapon.details)
-current_weapon_state = 0
 target = undefined
 //*******************
 x = (x div CELLSIZE) * CELLSIZE
@@ -23,9 +20,7 @@ function save()
 		_health: _health,
 		_stats: primStats.save(),
 		_skills: skills.save(),
-		_wStates: weapon_states,
 		_weapon: weapon.save(),
-		currentWS: current_weapon_state,
 		_x: x,
 		_y: y,
 		_sprite: sprite,
@@ -43,8 +38,6 @@ function load(obj)
 	skills.load(obj._skills)
 	weapon = instance_create_layer(x, y, layer, oWeapon)
 	weapon.load(obj._weapon)
-	weapon_states = obj._wStates
-	current_weapon_state = obj.currentWS
 	x = obj._x
 	y = obj._y
 	name = obj._name

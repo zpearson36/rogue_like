@@ -10,11 +10,11 @@ switch oGame.state
 	{
 		if(target != undefined)
 		{
-			if(point_distance(x, y, target.xx, target.yy) <= weapon.details.range * CELLSIZE * sqrt(2))
+			if(point_distance(x, y, target.xx, target.yy) <= weapon.range * CELLSIZE * sqrt(2))
 			{
 				if(hit(self, target))
 				{
-					var dmg = weapon.details.damage(primStats)
+					var dmg = weapon.damage(primStats)
 					show_debug_message(name + " hits for " + string(dmg) + " points of damage")
 					target._health -= dmg
 				}

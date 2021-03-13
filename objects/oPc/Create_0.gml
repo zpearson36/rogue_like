@@ -6,16 +6,13 @@ event_inherited()
 _health = 10
 primStats = instance_create_layer(x, y, layer, oPrimaryStats)
 skills = instance_create_layer(x, y, layer, oSkills)
-weapon_states = []
 weapon = instance_create_layer(x, y, layer, oWeapon)
-array_push(weapon_states, weapon.details)
 current_weapon_state = 0
 target = undefined
 //*******************
 
 sprite = sPc
 name = "PC character"
-array_push(weapon_states, new weaponDetails("Long Sword",  1, 3, [.05,  .05, 0, 0], "long_blade"))
 state = PC_STATE.IDLE
 xx = (x div CELLSIZE) * CELLSIZE
 yy = (y div CELLSIZE) * CELLSIZE
@@ -27,9 +24,7 @@ function save()
 		_health: _health,
 		_stats: primStats.save(),
 		_skills: skills.save(),
-		_wStates: weapon_states,
 		_weapon: weapon.save(),
-		currentWS: current_weapon_state,
 		_x: xx,
 		_y: yy,
 		_sprite: sprite,
@@ -47,8 +42,6 @@ function load(obj)
 	skills.load(obj._skills)
 	weapon = instance_create_layer(x, y, layer, oWeapon)
 	weapon.load(obj._weapon)
-	weapon_states = obj._wStates
-	current_weapon_state = obj.currentWS
 	xx = obj._x
 	yy = obj._y
 	name = obj._name

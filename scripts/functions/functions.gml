@@ -81,7 +81,7 @@ function get_path(start, target, map)
 function hit(atk, def)
 {
 	def_roll = roll() + def.skills.modifier("dodge")
-	atk_roll = roll() + atk.skills.modifier(atk.weapon.details.wType)
+	atk_roll = roll() + atk.skills.modifier(atk.weapon.wType)
 	return atk_roll > def_roll
 }
 
