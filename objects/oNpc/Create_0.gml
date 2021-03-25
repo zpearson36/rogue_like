@@ -1,13 +1,17 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited()
+
 //******************
 _health = 10
 primStats = instance_create_layer(x, y, layer, oPrimaryStats)
 skills = instance_create_layer(x, y, layer, oSkills)
-weapon = instance_create_layer(x, y, layer, oWeapon)
+unarmed = instance_create_layer(x, y, layer, oWeapon)
+weapon = unarmed
 target = undefined
+inventory = instance_create_layer(x, y, layer, oInventory)
 //*******************
+
 x = (x div CELLSIZE) * CELLSIZE
 y = (y div CELLSIZE) * CELLSIZE
 sprite = sNpc
@@ -24,7 +28,8 @@ function save()
 		_x: x,
 		_y: y,
 		_sprite: sprite,
-		_name: name
+		_name: name,
+		_inventory: inventory.save()
 		}
 	return _saveEntity
 }
@@ -32,14 +37,12 @@ function save()
 function load(obj)
 {
 	_health = obj._health
-	primStats = instance_create_layer(x, y, layer, oPrimaryStats)
 	primStats.load(obj._stats)
-	skills = instance_create_layer(x, y, layer, oSkills)
 	skills.load(obj._skills)
-	weapon = instance_create_layer(x, y, layer, oWeapon)
 	weapon.load(obj._weapon)
 	x = obj._x
 	y = obj._y
 	name = obj._name
 	sprite = obj._sprite
+	inventory.load(obj._inventory)
 }

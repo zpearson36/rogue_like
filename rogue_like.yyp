@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},"order":4,},
     {"id":{"name":"oPersistent","path":"objects/oPersistent/oPersistent.yy",},"order":10,},
+    {"id":{"name":"oInventory","path":"objects/oInventory/oInventory.yy",},"order":12,},
     {"id":{"name":"sNpc","path":"sprites/sNpc/sNpc.yy",},"order":2,},
     {"id":{"name":"oSkill","path":"objects/oSkill/oSkill.yy",},"order":5,},
     {"id":{"name":"fSkillPoints","path":"fonts/fSkillPoints/fSkillPoints.yy",},"order":5,},
@@ -15,6 +16,7 @@
     {"id":{"name":"weaponsList","path":"scripts/weaponsList/weaponsList.yy",},"order":3,},
     {"id":{"name":"oMainMenuButton","path":"objects/oMainMenuButton/oMainMenuButton.yy",},"order":1,},
     {"id":{"name":"oGame","path":"objects/oGame/oGame.yy",},"order":1,},
+    {"id":{"name":"oItem","path":"objects/oItem/oItem.yy",},"order":13,},
     {"id":{"name":"fMainMenu","path":"fonts/fMainMenu/fMainMenu.yy",},"order":0,},
     {"id":{"name":"oSkills","path":"objects/oSkills/oSkills.yy",},"order":3,},
     {"id":{"name":"text_box","path":"objects/text_box/text_box.yy",},"order":0,},
