@@ -11,6 +11,11 @@ unarmed = instance_create_layer(x, y, layer, oWeapon)
 weapon = unarmed
 target = undefined
 inventory = instance_create_layer(x, y, layer, oInventory)
+inventory_item_dislpay = []
+inv_selected_obj = undefined
+scroll_index = 0
+inventory.add_item(instance_create_layer(x, y, layer, oWeapon))
+inventory.add_item(instance_create_layer(x, y, layer, oWeapon))
 inventory.add_item(instance_create_layer(x, y, layer, oWeapon))
 inventory.add_item(instance_create_layer(x, y, layer, oWeapon))
 inventory.add_item(instance_create_layer(x, y, layer, oWeapon))

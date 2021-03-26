@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Inventory",
+    "path": "folders/Objects/Inventory.yy",
   },
   "resourceVersion": "1.0",
   "name": "oInventory",

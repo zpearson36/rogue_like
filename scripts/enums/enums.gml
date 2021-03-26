@@ -64,6 +64,7 @@ enum PC_STATE
 	IDLE = 0,
 	ATTACKING = 1,
 	CASTING = 2,
+	INVENTORY = 3,
 }
 
 enum GAME_STATE

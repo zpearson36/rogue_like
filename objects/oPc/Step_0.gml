@@ -44,6 +44,11 @@ switch(oGame.state)
 					state = PC_STATE.ATTACKING
 					break;
 				}
+				if(keyboard_check_pressed(ord("I")))
+				{
+					state = PC_STATE.INVENTORY
+					break;
+				}
 			}
 			case PC_STATE.ATTACKING:
 			{
@@ -83,6 +88,22 @@ switch(oGame.state)
 						break;
 					}
 				}
+			}
+			case PC_STATE.INVENTORY:
+			{
+				if(keyboard_check_pressed(vk_escape))
+				{
+					state = PC_STATE.IDLE
+					break;
+				}
+				if(keyboard_check_pressed(ord("I")))
+				{
+					state = PC_STATE.IDLE
+					break;
+				}
+				if(mouse_wheel_up()) scroll_index = max(scroll_index - 1, 0)
+				if(mouse_wheel_down()) scroll_index = max(min(scroll_index + 1, array_length(inventory.contents) - 4), 0)
+				if(mouse_check_button_pressed(mb_right)) inv_selected_obj = undefined
 			}
 		}
 	}
