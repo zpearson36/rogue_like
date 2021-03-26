@@ -25,5 +25,3 @@ switch(state)
 		}
 	}
 }
-
-show_debug_message(mouse_y)
