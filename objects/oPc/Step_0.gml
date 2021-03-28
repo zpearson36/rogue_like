@@ -47,6 +47,14 @@ switch(oGame.state)
 				if(keyboard_check_pressed(ord("I")))
 				{
 					state = PC_STATE.INVENTORY
+					// Creates the inventory buttons to interact with
+					for(var i = 0; i < array_length(inventory.contents); i++)
+					{
+						var item_btn = instance_create_layer(80, 60 + 155 * i, layer, oInventoryItem)
+						item_btn.item = inventory.contents[i]
+						item_btn.owner = self
+						array_push(inventory_item_display, item_btn)
+					}
 					break;
 				}
 			}

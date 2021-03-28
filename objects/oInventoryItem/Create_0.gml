@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+prev_y = y
 item = undefined
 width = 700
 height = 150
@@ -10,6 +11,7 @@ state = INV_STATES.IDLE
 upper_boundary = 60
 lower_boundary = 680
 owner = false
+action_list = []
 
 enum INV_STATES
 {

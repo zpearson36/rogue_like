@@ -8,10 +8,12 @@ _health = 10
 primStats = instance_create_layer(x, y, layer, oPrimaryStats)
 skills = instance_create_layer(x, y, layer, oSkills)
 unarmed = instance_create_layer(x, y, layer, oWeapon)
+unarmed.owner = self
 weapon = unarmed
 target = undefined
 inventory = instance_create_layer(x, y, layer, oInventory)
-inventory_item_dislpay = []
+inventory.owner = self
+inventory_item_display = []
 inv_selected_obj = undefined
 scroll_index = 0
 //*******************

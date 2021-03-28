@@ -3,6 +3,7 @@
 event_inherited()
 
 contents = []
+owner = undefined
 
 function save()
 {
@@ -15,7 +16,8 @@ function save()
 	var _saveEntity =
 	{
 		obj: object_get_name(object_index),
-		_contents: itemArray
+		_contents: itemArray,
+		_owner: owner
 	}
 	return _saveEntity
 }
@@ -26,12 +28,14 @@ function load(obj)
 	{
 		var temp_obj = instance_create_layer(x, y, layer, obj._contents[i].obj)
 		temp_obj.load(obj._contents[i])
-		array_push(contents, temp_obj)
+		add_item(temp_obj)
 	}
+	owner = obj._owner
 }
 
 function add_item(item)
 {
+	item.owner = owner
 	array_push(contents, item)
 }
 

@@ -16,4 +16,12 @@ if(state != INV_STATES.HIDDEN)
 	draw_rectangle_color(x + x_offset, y + y_offset, x + x_offset + 64, y + y_offset + 64, c_black, c_black, c_black, c_black, false)
 	draw_rectangle_color(x + x_offset, y + y_offset, x + x_offset + 64, y + y_offset + 64, c_white, c_white, c_white, c_white, true)
 	draw_sprite(item.icon, -1, x + x_offset, y + y_offset)
+	
+	draw_set_color(c_white)
+	
+	// create menu window for selected item
+	if(owner.inv_selected_obj == self)
+	{
+		draw_rectangle_color(x + width - 105, y + 5, x + width - 5, y + height - 5, c_black, c_black, c_black, c_black, false)
+	}
 }

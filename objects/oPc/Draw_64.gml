@@ -1,22 +1,11 @@
 // Display Inventory
+draw_text_color(50, 50, weapon.name, c_red, c_red, c_red, c_red, 1)
 switch state
 {
 	case PC_STATE.INVENTORY:
 	{		
 		if(array_length(inventory.contents) > 0)
 		{
-			// Creates the inventory buttons to interact with
-			if(array_length(inventory.contents) != array_length(inventory_item_dislpay))
-			{
-				for(var i = 0; i < array_length(inventory.contents); i++)
-				{
-					var item_btn = instance_create_layer(80, 60 + 155 * i, layer, oInventoryItem)
-					item_btn.item = inventory.contents[i]
-					item_btn.owner = self
-					array_push(inventory_item_dislpay, item_btn)
-				}
-			}
-			
 			// Creates scroll bar
 			var num_items = array_length(inventory.contents)
 			draw_set_color(c_gray)
@@ -30,9 +19,9 @@ switch state
 			draw_rectangle(60, 60 + scroll_index * scroll_length, 70, scroll_height + scroll_index * scroll_length, false)
 			
 			// updates itm button position for scrolling
-			for(var i = 0; i < array_length(inventory_item_dislpay); i++)
+			for(var i = 0; i < array_length(inventory_item_display); i++)
 			{
-				inventory_item_dislpay[i].y = 60 + 155 * (i - scroll_index)
+				inventory_item_display[i].y = 60 + 155 * (i - scroll_index)
 			}
 		}
 		else
@@ -48,11 +37,11 @@ switch state
 	default:
 	{
 		// deletes any itm buttons that exist when not in inventory mode
-		if(array_length(inventory_item_dislpay) > 0)
+		if(array_length(inventory_item_display) > 0)
 		{
-			for(var i = 0; i < array_length(inventory_item_dislpay); i++)
+			for(var i = 0; i < array_length(inventory_item_display); i++)
 			{
-				var itm = array_pop(inventory_item_dislpay)
+				var itm = array_pop(inventory_item_display)
 				instance_destroy(itm)
 			}
 		}

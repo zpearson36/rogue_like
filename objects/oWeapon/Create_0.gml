@@ -2,6 +2,12 @@
 // You can write your code in this editor
 event_inherited()
 
+enum WPN_STATES
+{
+	IDLE = 0,
+	EQUIP = 1,
+}
+
 name = "unarmed"
 wType = "unarmed"
 icon_name = "sUnarmed"
@@ -13,7 +19,17 @@ damageScale[? "strength"]     = .5
 damageScale[? "dexterity"]    = 0
 damageScale[? "intelligence"] = 0
 damageScale[? "endurance"]    = 0
+owner = undefined
+state = WPN_STATES.IDLE
 
+func_map = ds_map_create()
+
+function equip()
+{
+	owner.weapon = self
+}
+
+func_map[? "equip"] = WPN_STATES.EQUIP
 
 function damage(prmStts)
 {
@@ -44,7 +60,8 @@ function save()
 		_baseDamage: baseDamage,
 		_keyArray: keyArray,
 		_valArray: valArray,
-		_icon_name: icon_name
+		_icon_name: icon_name,
+		//_owner: owner
 	}
 	return _saveEntity
 }
@@ -60,4 +77,5 @@ function load(obj)
 	range = obj._range
 	baseDamage = obj._baseDamage
 	icon_name = obj._icon_name
+	//owner = obj._owner
 }

@@ -29,6 +29,10 @@ if(menu.major_skills_available == 0 and menu.minor_skills_available == 0 and men
 		char.inventory.add_item(get_weapon("dagger"))
 		char.inventory.add_item(get_weapon("short_sword"))
 		char.inventory.add_item(get_weapon("long_sword"))
+		char.inventory.add_item(get_weapon("long_sword"))
+		char.inventory.add_item(get_weapon("long_sword"))
+		char.inventory.add_item(get_weapon("long_sword"))
+		char.inventory.add_item(get_weapon("long_sword"))
 	}
 	instance_create_layer(irandom(room_width), irandom(room_height), layer, oNpc)
 	game.running = true
