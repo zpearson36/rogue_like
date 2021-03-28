@@ -123,19 +123,6 @@ function load_game(fileName)
 		
 		var _loadData = json_parse(_string)
 		
-		/*while(array_length(_loadData) > 0)
-		{
-			var _loadEntity = array_pop(_loadData)
-			with(instance_create_layer(0,0, layer, asset_get_index(_loadEntity.obj)))
-			{
-				show_debug_message(_loadEntity.obj)
-				show_debug_message(asset_get_index(_loadEntity.obj))
-				show_debug_message(_loadEntity)
-				load(_loadEntity)
-				show_debug_message("End Entity\n\n\n")
-			}
-		}*/
-		
 		//the below code forces the oGame object to load last.
 		//This is because the load will fail if oGame is loaded first
 		//still investigating why this is the case
@@ -151,25 +138,46 @@ function load_game(fileName)
 				var _loadEntity = _loadData[i]
 				with(instance_create_layer(0,0, layer, asset_get_index(_loadEntity.obj)))
 				{
-					show_debug_message(_loadEntity.obj)
-					show_debug_message(asset_get_index(_loadEntity.obj))
-					show_debug_message(_loadEntity)
+					//show_debug_message(_loadEntity.obj)
+					//show_debug_message(asset_get_index(_loadEntity.obj))
+					//show_debug_message(_loadEntity)
 					load(_loadEntity)
-					show_debug_message("End Entity\n\n\n")
+					//show_debug_message("End Entity\n\n\n")
 				}
 			}
 		}
 		var _loadEntity = _loadData[oGameVar]
 		with(instance_create_layer(0,0, layer, asset_get_index(_loadEntity.obj)))
 		{
-			show_debug_message(_loadEntity.obj)
-			show_debug_message(asset_get_index(_loadEntity.obj))
-			show_debug_message(_loadEntity)
+			//show_debug_message(_loadEntity.obj)
+			//show_debug_message(asset_get_index(_loadEntity.obj))
+			//show_debug_message(_loadEntity)
 			load(_loadEntity)
-			show_debug_message("End Entity\n\n\n")
+			//show_debug_message("End Entity\n\n\n")
 		}
 
 		//room_goto(_room3._room)
 	}
 	//show_debug_message("Game Loaded! " + _string)
+}
+
+function get_weapon(wpn_str)
+{
+	if(file_exists(working_directory + "weapons.json"))
+	{
+		var _buffer = buffer_load(working_directory + "weapons.json")
+		var _string = buffer_read(_buffer, buffer_string)
+		buffer_delete(_buffer)
+		var weapons_map = json_decode(_string)
+		var chosen_weapon = weapons_map[? wpn_str]
+		var weapon_string = json_encode(chosen_weapon)
+		var weapon_json = json_parse(weapon_string)
+		var weapon_obj = instance_create_depth(0, 0, 0, oWeapon)
+		weapon_obj.load(weapon_json)
+		return weapon_obj
+	}
+	else
+	{
+		show_error("No Weapon List", true)
+	}
 }

@@ -4,6 +4,8 @@ event_inherited()
 
 name = "unarmed"
 wType = "unarmed"
+icon_name = "sUnarmed"
+icon = sUnarmed
 range = 1
 baseDamage = 0
 damageScale = ds_map_create()
@@ -35,13 +37,14 @@ function save()
 	}
 	var _saveEntity =
 	{
-		obj: object_get_name(object_index),
+		obj: object_index, //object_get_name(object_index),
 		_name: name,
 		_wType: wType,
 		_range: range,
 		_baseDamage: baseDamage,
 		_keyArray: keyArray,
-		_valArray: valArray
+		_valArray: valArray,
+		_icon_name: icon_name
 	}
 	return _saveEntity
 }
@@ -56,4 +59,5 @@ function load(obj)
 	wType = obj._wType
 	range = obj._range
 	baseDamage = obj._baseDamage
+	icon_name = obj._icon_name
 }
