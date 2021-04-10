@@ -7,7 +7,16 @@ if(menu.major_skills_available == 0 and menu.minor_skills_available == 0 and men
 	subimg = 1
 	with(menu)
 	{
-		var char = instance_create_layer(irandom(room_width), irandom(room_height), layer, oPc)
+		var xx = irandom(room_width)
+		var yy = irandom(room_height)
+		
+		while(game.dungeon_room.grid[xx div CELLSIZE][yy div CELLSIZE] != FLOOR)
+		{
+			xx = irandom(room_width)
+			yy = irandom(room_height)
+		}
+		
+		var char = instance_create_layer(xx, yy, layer, oPc)
 		char.persistent = true
 		char.name = txt_field
 		char.primStats = instance_create_layer(x, y, layer, oPrimaryStats)
@@ -33,8 +42,18 @@ if(menu.major_skills_available == 0 and menu.minor_skills_available == 0 and men
 		char.inventory.add_item(get_weapon("long_sword"))
 		char.inventory.add_item(get_weapon("long_sword"))
 		char.inventory.add_item(get_weapon("long_sword"))
+		char.inventory.add_item(get_weapon("long_sword"))
+		char.inventory.add_item(get_weapon("long_sword"))
+		char.inventory.add_item(get_weapon("long_sword"))
+		char.inventory.add_item(get_weapon("long_sword"))
+		char.inventory.add_item(get_weapon("long_sword"))
+		char.inventory.add_item(get_weapon("long_sword"))
+		char.inventory.add_item(get_weapon("long_sword"))
+		char.inventory.add_item(get_weapon("long_sword"))
+		char.inventory.add_item(get_weapon("long_sword"))
 	}
-	instance_create_layer(irandom(room_width), irandom(room_height), layer, oNpc)
+	//instance_create_layer(irandom(room_width), irandom(room_height), layer, oNpc)
+
 	game.running = true
 	room_goto_next()
 }

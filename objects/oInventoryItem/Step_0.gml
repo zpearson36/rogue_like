@@ -49,7 +49,7 @@ switch state
 			}
 			break
 		}
-		if(mouse_x > x and mouse_y > y and mouse_x < x + width and mouse_y < y + height)
+		if(device_mouse_x_to_gui(0) > x and device_mouse_y_to_gui(0) > y and device_mouse_x_to_gui(0) < x + width and device_mouse_y_to_gui(0) < y + height)
 		{
 			state = INV_STATES.HOVER
 			c_fill = c_ltgray
@@ -83,7 +83,7 @@ switch state
 			}
 			break
 		}
-		if(not(mouse_x > x and mouse_y > y and mouse_x < x + width and mouse_y < y + height))
+		if(not(device_mouse_x_to_gui(0) > x and device_mouse_y_to_gui(0) > y and device_mouse_x_to_gui(0) < x + width and device_mouse_y_to_gui(0) < y + height))
 		{
 			state = INV_STATES.IDLE
 			break;

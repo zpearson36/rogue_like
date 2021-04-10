@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 //show_debug_message(weapon)
+cam = view_camera[0]
+camera_set_view_pos(cam, xx - (camera_get_view_width(cam) / 2), yy - (camera_get_view_height(cam) / 2))
 switch(oGame.state)
 {
 	case GAME_STATE.PC_TURN:
@@ -17,26 +19,38 @@ switch(oGame.state)
 				}
 				if(keyboard_check_pressed(ord("W")))
 				{
-					yy -= CELLSIZE
-					oGame.flip_turn = true
+					if(oGame.dungeon_room.grid[xx div CELLSIZE][(yy - CELLSIZE) div CELLSIZE] == FLOOR)
+					{
+						yy -= CELLSIZE
+						oGame.flip_turn = true
+					}
 					break;
 				}
 				if(keyboard_check_pressed(ord("S")))
 				{
-					yy += CELLSIZE
-					oGame.flip_turn = true
+					if(oGame.dungeon_room.grid[xx div CELLSIZE][(yy + CELLSIZE) div CELLSIZE] == FLOOR)
+					{
+						yy += CELLSIZE
+						oGame.flip_turn = true
+					}
 					break;
 				}
 				if(keyboard_check_pressed(ord("A")))
 				{
-					xx -= CELLSIZE
-					oGame.flip_turn = true
+					if(oGame.dungeon_room.grid[(xx - CELLSIZE) div CELLSIZE][yy div CELLSIZE] == FLOOR)
+					{
+						xx -= CELLSIZE
+						oGame.flip_turn = true
+					}
 					break;
 				}
 				if(keyboard_check_pressed(ord("D")))
 				{
-					xx += CELLSIZE
-					oGame.flip_turn = true
+					if(oGame.dungeon_room.grid[(xx + CELLSIZE) div CELLSIZE][yy div CELLSIZE] == FLOOR)
+					{
+						xx += CELLSIZE
+						oGame.flip_turn = true
+					}
 					break;
 				}
 				if(keyboard_check_pressed(ord("Q")))

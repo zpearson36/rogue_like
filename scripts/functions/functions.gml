@@ -57,8 +57,6 @@ function get_path(start, target, map)
 	
 	heuristic_search(frontier, came_from, start, dest, map)
 	
-	//ds_map_copy(path, came_from)
-	
 	var _x = dest[0]
 	var _y = dest[1]
 	var prev_x = undefined

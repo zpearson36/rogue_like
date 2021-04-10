@@ -1,5 +1,6 @@
 // Display Inventory
-draw_text_color(50, 50, weapon.name, c_red, c_red, c_red, c_red, 1)
+draw_text_color(50, 25, mouse_y, c_red, c_red, c_red, c_red, 1)
+draw_text_color(50, 50, device_mouse_y_to_gui(0), c_red, c_red, c_red, c_red, 1)
 switch state
 {
 	case PC_STATE.INVENTORY:
@@ -9,12 +10,12 @@ switch state
 			// Creates scroll bar
 			var num_items = array_length(inventory.contents)
 			draw_set_color(c_gray)
-			var scroll_height = clamp((room_height - 60) / (num_items / 4), 75, room_height - 60)
+			var scroll_height = clamp((window_get_height() - 60) / (num_items / 4), 75, window_get_height() - 60)
 			var hidden_items = max(num_items - 4, 0)
 			var scroll_length = 0
 			if(hidden_items != 0)
 			{
-				scroll_length = ((room_height - 60) - scroll_height) / hidden_items
+				scroll_length = ((window_get_height() - 60) - scroll_height) / hidden_items
 			}
 			draw_rectangle(60, 60 + scroll_index * scroll_length, 70, scroll_height + scroll_index * scroll_length, false)
 			

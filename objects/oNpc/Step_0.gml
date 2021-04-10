@@ -29,10 +29,14 @@ switch oGame.state
 			{
 				var next = get_path(start, target, oGame.map)
 				var dir = undefined
-				if start[0] - next[0] > 0 dir = LEFT
-				else if start[0] - next[0] < 0 dir = RIGHT
-				else if start[1] - next[1] > 0 dir = UP
-				else if start[1] - next[1] < 0 dir = DOWN
+				var collision_left  = collision_rectangle(x - CELLSIZE, y,            x - 1,                  y + CELLSIZE - 1, oNpc, false, true)
+				var collision_right = collision_rectangle(x + CELLSIZE, y,            x + (2 * CELLSIZE) - 1, y + CELLSIZE - 1, oNpc, false, true)
+				var collision_up    = collision_rectangle(x,            y - CELLSIZE, x + CELLSIZE - 1,       y - 1, oNpc, false, true)
+				var collision_down  = collision_rectangle(x,            y + CELLSIZE, x + CELLSIZE - 1,       y + (2 * CELLSIZE) - 1, oNpc, false, true)
+				if(      (start[0] - next[0] > 0) and (oGame.dungeon_room.grid[(x div CELLSIZE) - 1][y div CELLSIZE] == FLOOR) and not collision_left)  dir = LEFT
+				else if ((start[0] - next[0] < 0) and (oGame.dungeon_room.grid[(x div CELLSIZE) + 1][y div CELLSIZE] == FLOOR) and not collision_right) dir = RIGHT
+				else if ((start[1] - next[1] > 0) and (oGame.dungeon_room.grid[x div CELLSIZE][(y div CELLSIZE) - 1] == FLOOR) and not collision_up)    dir = UP
+				else if ((start[1] - next[1] < 0) and (oGame.dungeon_room.grid[x div CELLSIZE][(y div CELLSIZE) + 1] == FLOOR) and not collision_down ) dir = DOWN
 			}
 			
 		}
@@ -41,14 +45,16 @@ switch oGame.state
 			target = instance_find(oPc, 0)
 			break;
 		}
-		else var dir = choose(UP, DOWN, LEFT, RIGHT)
+		else
+		{
+			var dir = choose(UP, DOWN, LEFT, RIGHT)
+		}
 		switch dir
 		{
 			case UP:
 			{
 				if( y - CELLSIZE >= 0)
 				{
-					if not collision_rectangle(x, y - CELLSIZE, x + CELLSIZE, y, oNpc, false, true)
 					y -= CELLSIZE
 					oGame.flip_turn = true
 					break;
@@ -58,7 +64,6 @@ switch oGame.state
 			{
 				if( y + CELLSIZE < room_height)
 				{
-					if not collision_rectangle(x, y + CELLSIZE, x + CELLSIZE, y + (2 * CELLSIZE), oNpc, false, true)
 					y += CELLSIZE
 					oGame.flip_turn = true
 					break;
@@ -68,7 +73,7 @@ switch oGame.state
 			{
 				if( x - CELLSIZE >= 0)
 				{
-					if not collision_rectangle(x - CELLSIZE, y, x, y + CELLSIZE, oNpc, false, true) x -= CELLSIZE
+					x -= CELLSIZE
 					oGame.flip_turn = true
 					break;
 				}
@@ -77,13 +82,14 @@ switch oGame.state
 			{
 				if(x + CELLSIZE < room_width)
 				{
-					if not collision_rectangle(x + CELLSIZE, y, x + (2 * CELLSIZE), y + CELLSIZE, oNpc, false, true) x += CELLSIZE
+					x += CELLSIZE
 					oGame.flip_turn = true
 					break;
 				}
 			}
 			case undefined:
 			{
+				oGame.flip_turn = true
 				break;
 			}
 		}

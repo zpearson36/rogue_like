@@ -1,6 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 draw_sprite(sprite, -1, xx, yy)
+
+/*if(xx >= camera_get_view_x(cam) + camera_get_view_width(cam)) camera_set_view_pos(cam, camera_get_view_x(cam) + camera_get_view_width(cam), camera_get_view_y(cam))
+if(xx < camera_get_view_x(cam)) camera_set_view_pos(cam, camera_get_view_x(cam) - camera_get_view_width(cam), camera_get_view_y(cam))
+if(yy >= camera_get_view_y(cam) + camera_get_view_height(cam)) camera_set_view_pos(cam, camera_get_view_x(cam), camera_get_view_y(cam) + camera_get_view_height(cam))
+if(yy < camera_get_view_y(cam)) camera_set_view_pos(cam, camera_get_view_x(cam), camera_get_view_y(cam) - camera_get_view_height(cam))*/
 switch(state)
 {
 	case PC_STATE.ATTACKING:
