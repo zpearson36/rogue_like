@@ -66,7 +66,9 @@ function get_path(start, target, map)
 		{
 			prev_x = _x
 			prev_y = _y
-			
+			draw_set_color(c_blue)
+			draw_circle(_x, _y, 16, false)
+			draw_set_color(c_white)
 			var tmp = came_from[? pos(_x, _y)]
 			_x = tmp[0]
 			_y = tmp[1]

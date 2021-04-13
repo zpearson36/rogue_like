@@ -20,7 +20,7 @@ for(var i = 0; i < width; i++)
 var controller_x = width div 2
 var controller_y = height div 2
 var controller_direction = irandom(3)
-var steps = 400
+var steps = 800
 show_debug_message("2")
 var direction_change_odds = 1
 repeat (steps)
@@ -50,20 +50,7 @@ repeat (steps)
 	}
 }
 show_debug_message("3")
-// Create NPCs
-repeat(3)
-{
-	var xx = irandom(room_width)
-	var yy = irandom(room_height)
-	var attempts = 5
-	while(grid[xx div CELLSIZE][yy div CELLSIZE] != FLOOR and attempts > 0)
-	{
-		xx = irandom(room_width)
-		yy = irandom(room_height)
-		attempts --
-	}
-	if attempts > 0 instance_create_layer(xx, yy, layer, oNpc)
-}
+
 show_debug_message("4")
 function save()
 {

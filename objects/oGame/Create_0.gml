@@ -3,13 +3,13 @@
 event_inherited()
 randomize()
 
-for(var i = 0; i < MAPWIDTH; i++)
+/*for(var i = 0; i < MAPWIDTH; i++)
 {
        for(var j = 0; j < MAPHEIGHT; j++)
        {
                map[i][j] = EMPTY//irandom(255)
        }
-}
+}*/
 
 state = GAME_STATE.PC_TURN
 flip_turn = false
@@ -23,7 +23,7 @@ function save()
 		obj: object_get_name(object_index),
 		_state: state,
 		_flip_turn: flip_turn,
-		_map: map,
+		//_map: map,
 		_room: room,
 		_dungeon: dungeon_room.save()
 		
@@ -35,7 +35,7 @@ function load(obj)
 {
 	state = obj._state
 	flip_turn = obj._flip_turn
-	map = obj._map
+	//map = obj._map
 	room_goto(obj._room)
 	dungeon_room.load(obj._dungeon)
 }

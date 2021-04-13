@@ -7,13 +7,13 @@ if(menu.major_skills_available == 0 and menu.minor_skills_available == 0 and men
 	subimg = 1
 	with(menu)
 	{
-		var xx = irandom(room_width)
-		var yy = irandom(room_height)
+		var xx = irandom(ROOMW)
+		var yy = irandom(ROOMH)
 		
 		while(game.dungeon_room.grid[xx div CELLSIZE][yy div CELLSIZE] != FLOOR)
 		{
-			xx = irandom(room_width)
-			yy = irandom(room_height)
+			xx = irandom(ROOMW)
+			yy = irandom(ROOMH)
 		}
 		
 		var char = instance_create_layer(xx, yy, layer, oPc)
@@ -38,23 +38,24 @@ if(menu.major_skills_available == 0 and menu.minor_skills_available == 0 and men
 		char.inventory.add_item(get_weapon("dagger"))
 		char.inventory.add_item(get_weapon("short_sword"))
 		char.inventory.add_item(get_weapon("long_sword"))
-		char.inventory.add_item(get_weapon("long_sword"))
-		char.inventory.add_item(get_weapon("long_sword"))
-		char.inventory.add_item(get_weapon("long_sword"))
-		char.inventory.add_item(get_weapon("long_sword"))
-		char.inventory.add_item(get_weapon("long_sword"))
-		char.inventory.add_item(get_weapon("long_sword"))
-		char.inventory.add_item(get_weapon("long_sword"))
-		char.inventory.add_item(get_weapon("long_sword"))
-		char.inventory.add_item(get_weapon("long_sword"))
-		char.inventory.add_item(get_weapon("long_sword"))
-		char.inventory.add_item(get_weapon("long_sword"))
-		char.inventory.add_item(get_weapon("long_sword"))
-		char.inventory.add_item(get_weapon("long_sword"))
+	}
+	// Create NPCs
+	repeat(3)
+	{
+		var xx = irandom(ROOMW)
+		var yy = irandom(ROOMH)
+		var attempts = 50
+		while(game.dungeon_room.grid[xx div CELLSIZE][yy div CELLSIZE] != FLOOR and attempts > 0)
+		{
+			xx = irandom(ROOMW)
+			yy = irandom(ROOMH)
+			attempts --
+		}
+		if attempts > 0 instance_create_layer(xx, yy, layer, oNpc)
 	}
 	//instance_create_layer(irandom(room_width), irandom(room_height), layer, oNpc)
 
-	game.running = true
+	//game.running = true
 	room_goto_next()
 }
 else

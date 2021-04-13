@@ -27,7 +27,7 @@ switch oGame.state
 			}
 			else
 			{
-				var next = get_path(start, target, oGame.map)
+				var next = get_path(start, target, oGame.dungeon_room.grid)
 				var dir = undefined
 				var collision_left  = collision_rectangle(x - CELLSIZE, y,            x - 1,                  y + CELLSIZE - 1, oNpc, false, true)
 				var collision_right = collision_rectangle(x + CELLSIZE, y,            x + (2 * CELLSIZE) - 1, y + CELLSIZE - 1, oNpc, false, true)

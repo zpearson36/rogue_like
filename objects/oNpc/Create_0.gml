@@ -19,6 +19,7 @@ y = (y div CELLSIZE) * CELLSIZE
 sprite = sNpc
 name = "NPC Character"
 
+
 function save()
 {
 	var _saveEntity = {
