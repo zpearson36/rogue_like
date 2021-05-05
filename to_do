@@ -1,0 +1,50 @@
+Things left to do
+
+Character:
+ - Character level progression/experiance collection
+ - - make enemies worth experience when killed
+ - - level progression system
+ - - - based strictly on gained experience?
+ - - - based on level up key/major skills?
+ - - - do skills automatically increase at level up or does player choose what to increase?
+
+Items:
+ - Weapons
+ - - Need More
+ - - Additional Stats (Damage type, magic/elemental?)
+ - - Upgrade Paths
+ - - - add upgrade materials
+ - - - upgrade effects?
+ - - Diablo type loot system? (Does upgrade paths with this type of loot system work?)
+ - Consumable Items
+ - - potions for health, strength, invis, etc
+ - Armor
+ - - armor will work as damage reduction. Greater armor proficiency == greater chance for max damage reduction
+ - - armor protects against different damage types
+
+Environment:
+ - dynamic lighting
+ - more consistent dungeon generation
+ - - currently, does not do rectangular rooms, but single cave-like dungeons
+ - - want to include different environments/biomes
+ - key areas/rooms remain the same between runs (bosses/key item levels/etc)
+ - - these areas unlock shortcuts back to them so player does not have to treck through
+
+Enemies:
+ - add enemy variations
+ - add loot drops (idealy diablo like loot drops, but might require item rework. Maybe random drops like DS)
+
+Magic:
+ - add magic and sorceries
+
+non-enemy NPCs:
+ - add dialogue system
+ - add merchant system (buy and sell)
+ - add weapon upgrade dialogue (weapon upgrades happen at specific NPCs)
+
+Story:
+ - Create Story
+
+UI:
+ - Need HUD
+ - Need Better and consistent Menus
