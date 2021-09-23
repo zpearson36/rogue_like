@@ -12,7 +12,11 @@ randomize()
 }*/
 
 state = GAME_STATE.PC_TURN
+prev_state = undefined
 flip_turn = false
+can_pause = true
+
+p_menu = undefined
 show_debug_message("A")
 dungeon_room = instance_create_layer(x, y, layer, oDungeon)
 show_debug_message("B")
@@ -22,6 +26,7 @@ function save()
 	{
 		obj: object_get_name(object_index),
 		_state: state,
+		_prev_state: prev_state,
 		_flip_turn: flip_turn,
 		//_map: map,
 		_room: room,
@@ -34,6 +39,8 @@ function save()
 function load(obj)
 {
 	state = obj._state
+	prev_state = obj._prev_state
+	if(state == GAME_STATE.PAUSE) state = prev_state
 	flip_turn = obj._flip_turn
 	//map = obj._map
 	room_goto(obj._room)

@@ -1,5 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+update_bb = false
+bb_x_offset = 0
+bb_y_offset = 0
 txt = ""
 prv_text = txt
 action = function(){show_debug_message("FUCK U")}

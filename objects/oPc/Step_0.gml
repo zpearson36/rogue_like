@@ -115,11 +115,6 @@ switch(oGame.state)
 			}
 			case PC_STATE.INVENTORY:
 			{
-				if(keyboard_check_pressed(vk_escape))
-				{
-					state = PC_STATE.IDLE
-					break;
-				}
 				if(keyboard_check_pressed(ord("I")))
 				{
 					state = PC_STATE.IDLE

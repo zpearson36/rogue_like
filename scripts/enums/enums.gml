@@ -70,7 +70,8 @@ enum PC_STATE
 enum GAME_STATE
 {
 	PC_TURN = 0,
-	NPC_TURN = 1
+	NPC_TURN = 1,
+	PAUSE = 2
 }
 
 enum MAJOR_SKILL

@@ -55,6 +55,7 @@
     {"id":{"name":"oInvAction","path":"objects/oInvAction/oInvAction.yy",},"order":2,},
     {"id":{"name":"sLongSword","path":"sprites/sLongSword/sLongSword.yy",},"order":14,},
     {"id":{"name":"fDisplay","path":"fonts/fDisplay/fDisplay.yy",},"order":6,},
+    {"id":{"name":"oPauseMenu","path":"objects/oPauseMenu/oPauseMenu.yy",},"order":14,},
     {"id":{"name":"Sprite6","path":"sprites/Sprite6/Sprite6.yy",},"order":5,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],

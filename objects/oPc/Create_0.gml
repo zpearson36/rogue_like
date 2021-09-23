@@ -4,6 +4,7 @@ event_inherited()
 
 //******************
 _health = 10
+max_health = 10
 primStats = instance_create_layer(x, y, layer, oPrimaryStats)
 skills = instance_create_layer(x, y, layer, oSkills)
 unarmed = instance_create_layer(x, y, layer, oWeapon)

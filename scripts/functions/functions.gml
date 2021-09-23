@@ -110,6 +110,7 @@ function save_game()
 	//buffer_save(_buffer, working_directory + "savedgame1.save")
 	buffer_delete(_buffer)
 	//show_debug_message("Game Saved! " + _string)
+	oCamera.txt_box.add_text("Game Saved!!!!")
 }
 
 function load_game(fileName)

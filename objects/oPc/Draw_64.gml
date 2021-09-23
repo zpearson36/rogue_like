@@ -1,6 +1,9 @@
 // Display Inventory
-draw_text_color(50, 25, mouse_y, c_red, c_red, c_red, c_red, 1)
+draw_text_color(50, 25, "Health: " + string(_health) + "/" + string(max_health), c_red, c_red, c_red, c_red, 1)
+/*draw_text_color(50, 25, mouse_y, c_red, c_red, c_red, c_red, 1)
 draw_text_color(50, 50, device_mouse_y_to_gui(0), c_red, c_red, c_red, c_red, 1)
+draw_text_color(50, 75, mouse_x, c_red, c_red, c_red, c_red, 1)
+draw_text_color(50, 100, device_mouse_x_to_gui(0), c_red, c_red, c_red, c_red, 1)*/
 switch state
 {
 	case PC_STATE.INVENTORY:

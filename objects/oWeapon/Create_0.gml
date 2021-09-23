@@ -27,6 +27,7 @@ func_map = ds_map_create()
 function equip()
 {
 	owner.weapon = self
+	oCamera.txt_box.add_text("Equipped " + name)
 }
 
 func_map[? "equip"] = WPN_STATES.EQUIP
