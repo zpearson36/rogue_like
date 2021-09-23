@@ -98,12 +98,14 @@ switch(oGame.state)
 						if(hit(self, targ))
 						{
 							var dmg = weapon.damage(primStats)
-							show_debug_message(name + " hits for " + string(dmg) + " points of damage with " + weapon.name)
+							oCamera.txt_box.add_text(name + " hits for " + string(dmg) + " points of damage with " + weapon.name)
+							//show_debug_message(name + " hits for " + string(dmg) + " points of damage with " + weapon.name)
 							targ._health -= dmg
 						}
 						else
 						{
-							show_debug_message(name + " misses " + targ.name)
+							oCamera.txt_box.add_text(name + " misses " + targ.name)
+							//show_debug_message(name + " misses " + targ.name)
 						}
 						state = PC_STATE.IDLE
 						oGame.flip_turn = true

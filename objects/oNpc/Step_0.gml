@@ -15,12 +15,14 @@ switch oGame.state
 				if(hit(self, target))
 				{
 					var dmg = weapon.damage(primStats)
-					show_debug_message(name + " hits for " + string(dmg) + " points of damage")
+					oCamera.txt_box.add_text(name + " hits for " + string(dmg) + " points of damage")
+					//show_debug_message(name + " hits for " + string(dmg) + " points of damage")
 					target._health -= dmg
 				}
 				else
 				{
-					show_debug_message(name + " misses " + target.name)
+					oCamera.txt_box.add_text(name + " misses " + target.name)
+					//show_debug_message(name + " misses " + target.name)
 				}
 				oGame.flip_turn = true
 				break;
