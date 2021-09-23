@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+cam_h = camera_get_view_height(view_camera[0])
 txt_array = []
 max_text_length = 38
 

@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-cam_h = camera_get_view_height(view_camera[0])
 bk_grnd = c_ltgray
 brdr = c_dkgrey
 draw_rectangle_color(50, cam_h - 250, 450, cam_h - 50, bk_grnd, bk_grnd, bk_grnd, bk_grnd, false)
