@@ -7,6 +7,7 @@ switch state
 	{		
 		if(array_length(inventory.contents) > 0)
 		{
+			
 			// Creates scroll bar
 			var num_items = array_length(inventory.contents)
 			draw_set_color(c_gray)

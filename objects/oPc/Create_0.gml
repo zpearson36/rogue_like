@@ -2,7 +2,6 @@
 // You can write your code in this editor
 event_inherited()
 
-
 //******************
 _health = 10
 primStats = instance_create_layer(x, y, layer, oPrimaryStats)

@@ -15,7 +15,7 @@ switch oGame.state
 				if(hit(self, target))
 				{
 					var dmg = weapon.damage(primStats)
-					oCamera.txt_box.add_text(name + " hits for " + string(dmg) + " points of damage")
+					oCamera.txt_box.add_text(name + " hits " + target.name + " for " + string(dmg) + " points of damage with " + weapon.name)
 					//show_debug_message(name + " hits for " + string(dmg) + " points of damage")
 					target._health -= dmg
 				}

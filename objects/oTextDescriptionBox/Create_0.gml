@@ -22,7 +22,7 @@ function add_text(str)
 {
 	var vocab_array = string_split(str, " ")
 	show_debug_message(vocab_array)
-	var tmp_string = vocab_array[0]
+	var tmp_string = "> " + vocab_array[0]
 	var add_last_string = false
 	for(var i = 1; i < array_length(vocab_array); i++)
 	{
@@ -34,7 +34,7 @@ function add_text(str)
 		else
 		{
 			array_push(txt_array, tmp_string)
-			tmp_string = vocab_array[i]
+			tmp_string = "  " + vocab_array[i]
 	        add_last_string = false
 		}
 	}
